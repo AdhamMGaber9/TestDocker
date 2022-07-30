@@ -1,6 +1,6 @@
 const express = require("express");
 const {Client} = require("pg")
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const redis = require("redis");
 
 //app init
