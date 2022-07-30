@@ -1,8 +1,8 @@
 const express = require("express");
-const {Client} = require("pg")
+// const {Client} = require("pg")
 const mongoose = require("mongoose");
 const redis = require("redis");
-
+const os =require("os");
 //app init
 const PORT = process.env.PORT || 4000;
 const app = express();
@@ -46,8 +46,9 @@ mongoose.connect(URI)
 //   .catch(() => console.log("Failed postgres"));
 
 app.get("/", (req, res) => {
-    redisClient.set('products','products...')
-    res.send("<h1>hello from aws using docker </h1>")
+    redisClient.set('products', 'products...')
+    console.log(`traffic from ${os.hostname}`)
+    res.send("<h1>hello from aws with watchtower!</h1>")
 });
 app.get('/data', async (req, res) => {
     const products = await redisClient.get('products');
