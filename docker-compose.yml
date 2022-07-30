@@ -3,7 +3,7 @@ services:
   node-app:
     container_name: express-node-app-container
     ports:
-      - "443:443"
+      - "80:80"
     env_file:
       - ./.env
     depends_on:
